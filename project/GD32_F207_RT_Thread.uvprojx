@@ -359,13 +359,13 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F20X_CL</Define>
               <Undefine></Undefine>
-              <IncludePath>..\applications;..\Libraries\GD32F20x_standard_peripheral\Include;..\rtthread\kernel\include;..\..\GD32_F207_RT_Thread;..\Libraries\CMSIS\GD\GD32F20x\Include;..\Libraries;..\applications\debug;..\components\armlibc;..\components\armlibc\sys;..\components\finsh;..\components;..\driver</IncludePath>
+              <IncludePath>..\applications;..\Libraries\GD32F20x_standard_peripheral\Include;..\rtthread\kernel\include;..\..\GD32_F207_RT_Thread;..\Libraries\CMSIS\GD\GD32F20x\Include;..\Libraries;..\components\armlibc;..\components\armlibc\sys;..\components\finsh;..\components;..\components\drivers;..\components\rtc;..\components\dfs\include;..\components\fal-latest\inc;..\components\fal-latest\samples\porting;..\components\littlefs-v2.1.4</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -721,32 +721,52 @@
             <File>
               <FileName>serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\driver\serial.c</FilePath>
+              <FilePath>..\components\drivers\serial.c</FilePath>
             </File>
             <File>
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\driver\usart.c</FilePath>
+              <FilePath>..\components\drivers\usart.c</FilePath>
             </File>
             <File>
-              <FileName>W25Q64Flash.c</FileName>
+              <FileName>ds1302z_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\driver\W25Q64Flash.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Debug</GroupName>
-          <Files>
-            <File>
-              <FileName>SEGGER_RTT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\applications\debug\SEGGER_RTT.c</FilePath>
+              <FilePath>..\components\rtc\ds1302z_rtc.c</FilePath>
             </File>
             <File>
-              <FileName>SEGGER_RTT_printf.c</FileName>
+              <FileName>mtd_nor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\applications\debug\SEGGER_RTT_printf.c</FilePath>
+              <FilePath>..\components\drivers\mtd_nor.c</FilePath>
+            </File>
+            <File>
+              <FileName>sfud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\drivers\sfud.c</FilePath>
+            </File>
+            <File>
+              <FileName>sfud_sfdp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\drivers\sfud_sfdp.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\drivers\spi_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_dev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\drivers\spi_dev.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_flash_sfud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\drivers\spi_flash_sfud.c</FilePath>
+            </File>
+            <File>
+              <FileName>rt_gd32f20x_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\drivers\rt_gd32f20x_spi.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -857,6 +877,76 @@
               <FileName>dataqueue.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\components\finsh\dataqueue.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FileSystem</GroupName>
+          <Files>
+            <File>
+              <FileName>dfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\dfs\src\dfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>dfs_file.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\dfs\src\dfs_file.c</FilePath>
+            </File>
+            <File>
+              <FileName>dfs_fs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\dfs\src\dfs_fs.c</FilePath>
+            </File>
+            <File>
+              <FileName>dfs_posix.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\dfs\src\dfs_posix.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\fal-latest\src\fal.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\fal-latest\src\fal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_partition.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\fal-latest\src\fal_partition.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_rtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\fal-latest\src\fal_rtt.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_flash_sfud_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\fal-latest\samples\porting\fal_flash_sfud_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>dfs_lfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\littlefs-v2.1.4\dfs_lfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\littlefs-v2.1.4\lfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfs_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\littlefs-v2.1.4\lfs_crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfs_util.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\littlefs-v2.1.4\lfs_util.c</FilePath>
             </File>
           </Files>
         </Group>

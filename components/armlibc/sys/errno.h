@@ -1,6 +1,9 @@
 #ifndef SYS_ERRNO_H__
 #define SYS_ERRNO_H__
 
+
+
+#if 0
 #ifdef RT_USING_DFS
 
 #include <dfs_def.h>
@@ -74,5 +77,7 @@
 #define ENOTSUP			134		/* Not supported */
 #define ENSRNOTFOUND 	163  	/* Domain name not found */
 #define EWOULDBLOCK 	EAGAIN  /* Operation would block */
+
+#endif
 
 #endif

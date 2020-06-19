@@ -20,8 +20,8 @@
 /*  Definitions                                                              */
 /*****************************************************************************/
 //Thread Priority
-//DBG thread priority
-#define THREAD_PRIORITY_DBG     1
+//Init device thread priority
+#define THREAD_PRIORITY_INIT				10
 
 
 /*****************************************************************************/

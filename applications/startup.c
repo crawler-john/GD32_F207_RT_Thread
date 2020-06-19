@@ -17,8 +17,6 @@
 #include <rtthread.h>
 #include "gd32f20x.h"
 #include "usart.h"
-#include "W25Q64Flash.h"
-
 
 // <o> Internal SRAM memory size[Kbytes] <8-64>
 //	<i>Default: 64
@@ -65,14 +63,13 @@ void SysTick_Handler(void)
  */
 void rt_hw_board_init(void)
 {
-	/* NVIC Configuration */
-	NVIC_Configuration();
+    /* NVIC Configuration */
+    NVIC_Configuration();
 
-	/* Configure the SysTick */
-	SysTick_Config( SystemCoreClock / RT_TICK_PER_SECOND );
-	rt_hw_usart_init();		//串口初始化
-	rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
-	SPI_init();
+    /* Configure the SysTick */
+    SysTick_Config( SystemCoreClock / RT_TICK_PER_SECOND );
+    rt_hw_usart_init();		//串口初始化
+    rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
 }
 
 /*@}*/

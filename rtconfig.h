@@ -21,8 +21,8 @@
 
 /* Using Software Timer */
 /* #define RT_USING_TIMER_SOFT */
-#define RT_TIMER_THREAD_PRIO		4
-#define RT_TIMER_THREAD_STACK_SIZE	512
+//#define RT_TIMER_THREAD_PRIO		4
+//#define RT_TIMER_THREAD_STACK_SIZE	512
 
 /* SECTION: IPC */
 /* Using Semaphore*/
@@ -79,4 +79,37 @@
 //#define FINSH_USING_AUTH
 
 #define RT_USING_LIBC
+/* system packages */
+
+#define PKG_USING_FAL
+#define FAL_DEBUG_CONFIG
+#define FAL_DEBUG 0
+#define FAL_PART_HAS_TABLE_CFG
+#define FAL_USING_SFUD_PORT
+//#define FAL_USING_NOR_FLASH_DEV_NAME "W25Q64"
+#define PKG_USING_FAL_LATEST_VERSION
+#define PKG_FAL_VER_NUM 0x99999
+#define PKG_USING_LITTLEFS
+#define PKG_USING_LITTLEFS_V214
+#define LFS_READ_SIZE 4096
+#define LFS_PROG_SIZE 4096
+#define LFS_BLOCK_SIZE 4096
+#define LFS_CACHE_SIZE 4096
+#define LFS_BLOCK_CYCLES 100
+#define LFS_LOOKAHEAD 512
+
+/* Device Drivers */
+#define RT_USING_SPI
+#define RT_USING_SPI2
+//#define RT_USING_SPI_DMA
+
+#define RT_USING_MTD_NOR
+#define RT_USING_SFUD
+#define RT_SFUD_USING_FLASH_INFO_TABLE
+//#define RT_SFUD_USING_QSPI
+#define RT_SFUD_SPI_MAX_HZ 50000000
+
+
+
+
 #endif

@@ -323,7 +323,7 @@ rt_inline void rt_work_init(struct rt_work* work, void (*work_func)(struct rt_wo
 #endif /* RT_USING_SPI */
 
 #ifdef RT_USING_MTD_NOR
-#include "drivers/mtd_nor.h"
+#include "mtd_nor.h"
 #endif /* RT_USING_MTD_NOR */
 
 #ifdef RT_USING_MTD_NAND
@@ -337,7 +337,6 @@ rt_inline void rt_work_init(struct rt_work* work, void (*work_func)(struct rt_wo
 #ifdef RT_USING_USB_HOST
 #include "drivers/usb_host.h"
 #endif /* RT_USING_USB_HOST */
-
 #ifdef RT_USING_SERIAL
 #include "serial.h"
 #endif /* RT_USING_SERIAL */
